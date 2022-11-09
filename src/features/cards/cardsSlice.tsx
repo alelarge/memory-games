@@ -15,9 +15,14 @@ export const cardsSlice = createSlice({
   initialState,
   reducers: {
     clear: (state: CardsState, action: PayloadAction<null>) => state = initialState,
+    selectCard: (state: CardsState, action: PayloadAction<number>) => {
+        const selectedCard = state.cardOrder[action.payload];
+        state.selectedCards.push(selectedCard);
+        return state;
+    }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { clear } = cardsSlice.actions
+export const { clear, selectCard } = cardsSlice.actions
 export default cardsSlice.reducer
