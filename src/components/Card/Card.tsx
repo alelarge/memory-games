@@ -1,13 +1,20 @@
 import { useState } from "react";
+import './Card.scss';
 
 type CardProps = {
-    content: string;
+    content: number;
 }
 
 function Card(props: CardProps){
-
     return(
-    <h1>{props.content}</h1>
+        <div className="MemoryCard">
+            <div className="MemoryCard__inner">
+                <div className="MemoryCard__inner__front">
+                </div>
+                <div className="MemoryCard__inner__back" style={{backgroundImage: `url(/images/${props.content}.png`}}>
+                </div>
+            </div>
+        </div>
     )
 }
 
