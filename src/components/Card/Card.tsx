@@ -1,21 +1,26 @@
 import { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store';
 import { selectCard } from '../../features/cards/cardsSlice';
 import './Card.scss';
 
 type CardProps = {
-    cardName: number;
-    cardId: number;
+    card: {
+        id: number;
+        visible: boolean;
+        number: number;
+    }
 }
 
 function Card(props: CardProps){
     const dispatch = useDispatch();
+
     return(
-        <div onClick={() => { dispatch(selectCard(props.cardId)) }} className="MemoryCard">
-            <div className="MemoryCard__inner">
+        <div onClick={() => { dispatch(selectCard(props.card.id)) }} className="MemoryCard">
+            <div className={"MemoryCard__inner " + (props.card.visible ? 'visible' : 'hidden')}>
                 <div className="MemoryCard__inner__front">
                 </div>
-                <div className="MemoryCard__inner__back" style={{backgroundImage: `url(/images/${props.cardName}.png`}}>
+                <div className="MemoryCard__inner__back" style={{backgroundImage: `url(/images/${props.card.number}.png`}}>
                 </div>
             </div>
         </div>

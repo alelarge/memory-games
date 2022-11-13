@@ -1,18 +1,22 @@
 import { useEffect } from "react";
-import { Provider, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
+import { clearSelectedCards } from '../../features/cards/cardsSlice';
 import './CardContainer.scss';
 import Card from '../Card/Card';
 
 function CardContainer(){
-    const { cardOrder, selectedCards } = useSelector((state: RootState) => state.cards);
+    const dispatch = useDispatch();
+    const { cards } = useSelector((state: RootState) => state.cards);
 
     useEffect(() => {
-        // console.log('selectedCards', selectedCards);
+        setTimeout(() => {
+            dispatch(clearSelectedCards())
+        }, 300);
     });
 
-    const cardItems = cardOrder.map((card, index) =>
-        <Card cardName={card} key={index} cardId={index} />
+    const cardItems = Object.keys(cards).map((item:string, i:number) => 
+        <Card card={cards[parseInt(item)]} key={cards[parseInt(item)].id} />
     );
 
     return(
