@@ -40,16 +40,16 @@ export const cardsSlice = createSlice({
     clear: (state: CardsState, action: PayloadAction<null>) => state = initialState,
     selectCard: (state: CardsState, action: PayloadAction<number>) => {
         const cardId = action.payload;
-        state.cards[cardId].visible = true;
-        const selectedCard = state.cards[cardId];
-        state.selectedCards.push(cardId);
+        if (!state.cards[cardId].visible) {
+            state.cards[cardId].visible = true;
+            state.selectedCards.push(cardId);
+        }
         
         return state;
     },
     clearSelectedCards: (state: CardsState) => {
         if (state.selectedCards.length > 1) {
-            if (state.cards[state.selectedCards[0]].number === state.cards[state.selectedCards[1]].number) {
-            } else {
+            if (state.cards[state.selectedCards[0]].number !== state.cards[state.selectedCards[1]].number) {
                 state.cards[state.selectedCards[0]].visible = false;
                 state.cards[state.selectedCards[1]].visible = false;
             }

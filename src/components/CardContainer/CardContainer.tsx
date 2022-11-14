@@ -12,7 +12,7 @@ function CardContainer(){
     useEffect(() => {
         setTimeout(() => {
             dispatch(clearSelectedCards())
-        }, 300);
+        }, 500);
     });
 
     const cardItems = Object.keys(cards).map((item:string, i:number) => 
