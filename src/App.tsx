@@ -3,6 +3,7 @@ import { Provider, useSelector } from 'react-redux';
 import { store } from './store';
 import './App.scss';
 import CardContainer from './components/CardContainer/CardContainer';
+import ProgressBar from './components/ProgressBar/ProgressBar';
 
 function App() {
   const [choise, setChoice] = useState<number>(0)
@@ -15,6 +16,7 @@ function App() {
       <Provider store={store}>
         <div className="App">
           <CardContainer />
+          <ProgressBar />
         </div>
       </Provider>
     </React.StrictMode>

@@ -19,14 +19,6 @@
             pointer-events: none;
         }
 
-        &.hidden {
-            //transition-delay: 0.3s;
-        }
-
-        // &:hover {
-        //     transform: rotateY(180deg);
-        // }
-
         &__front, 
         &__back {
             position: absolute;

@@ -1,0 +1,22 @@
+.ProgressBar {
+    height: 20px;
+    width: 100%;
+    background-color: "#e0e0de";
+    border-radius: 50px;
+    border: 1px solid black;
+    margin: 50px;
+
+    &__progress {
+        height: 100%;
+        background-color: blue;
+        border-radius: inherit;
+        text-align: right;
+        transition: width 1s linear;
+    }
+
+    &__label {
+        padding: 5px;
+        color: white;
+        font-weight: bold;
+    }
+}

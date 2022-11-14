@@ -1,2 +1,11 @@
 .MemoryContainer {
+    background-color: grey;
+    display: grid;
+    padding: 15px;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 500px;
+    height: 400px;
 }

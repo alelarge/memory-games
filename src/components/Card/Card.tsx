@@ -17,7 +17,7 @@ function Card(props: CardProps){
 
     return(
         <div onClick={() => { dispatch(selectCard(props.card.id)) }} className="MemoryCard">
-            <div className={"MemoryCard__inner " + (props.card.visible ? 'visible' : 'hidden')}>
+            <div className={"MemoryCard__inner " + (props.card.visible ? 'visible' : '')}>
                 <div className="MemoryCard__inner__front">
                 </div>
                 <div className="MemoryCard__inner__back" style={{backgroundImage: `url(/images/${props.card.number}.png`}}>
