@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import cards from './features/cards/cardsSlice';
+import controls from './features/controls/controlsSlice';
 
 export const createStore = () =>
     configureStore({
       reducer: {
         cards,
+        controls
       },
     });
   

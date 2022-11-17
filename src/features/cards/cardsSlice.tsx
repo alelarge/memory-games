@@ -31,13 +31,12 @@ const getInitialState = ():CardsState => {
 } 
 
 const initialState = getInitialState();
-console.log('initialState', initialState);
 
 export const cardsSlice = createSlice({
   name: "cards",
   initialState,
   reducers: {
-    clear: (state: CardsState, action: PayloadAction<null>) => state = initialState,
+    clear: (state: CardsState) => state = initialState,
     selectCard: (state: CardsState, action: PayloadAction<number>) => {
         const cardId = action.payload;
         if (!state.cards[cardId].visible) {
@@ -60,5 +59,5 @@ export const cardsSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { clear, selectCard, clearSelectedCards } = cardsSlice.actions
-export default cardsSlice.reducer
+export const { clear, selectCard, clearSelectedCards } = cardsSlice.actions;
+export default cardsSlice.reducer;

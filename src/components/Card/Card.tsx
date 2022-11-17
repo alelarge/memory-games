@@ -14,9 +14,17 @@ type CardProps = {
 
 function Card(props: CardProps){
     const dispatch = useDispatch();
+    const { selectedCards } = useSelector((state: RootState) => state.cards);
+    const { gameState } = useSelector((state: RootState) => state.controls);
+
+    const onClick = () => {
+        if (gameState === 'play' && selectedCards.length < 2) {
+            dispatch(selectCard(props.card.id));
+        }
+    }
 
     return(
-        <div onClick={() => { dispatch(selectCard(props.card.id)) }} className="MemoryCard">
+        <div onClick={onClick} className="MemoryCard">
             <div className={"MemoryCard__inner " + (props.card.visible ? 'visible' : '')}>
                 <div className="MemoryCard__inner__front">
                 </div>

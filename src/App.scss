@@ -1,5 +1,11 @@
 .App {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  h1 {
+    text-align: center;
+  }
+  
+  &__cards-wraper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

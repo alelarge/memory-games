@@ -1,22 +1,32 @@
 .ProgressBar {
-    height: 20px;
-    width: 100%;
-    background-color: "#e0e0de";
-    border-radius: 50px;
-    border: 1px solid black;
-    margin: 50px;
+    margin-top: 25px;
 
-    &__progress {
-        height: 100%;
-        background-color: blue;
-        border-radius: inherit;
-        text-align: right;
-        transition: width 1s linear;
+    &__controls {
+        text-align: center;
     }
 
-    &__label {
-        padding: 5px;
-        color: white;
-        font-weight: bold;
+    &__timeline {
+        height: 20px;
+        background-color: "#e0e0de";
+        border-radius: 50px;
+        border: 1px solid black;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+
+        &__progress {
+            height: 100%;
+            background-color: blue;
+            border-radius: inherit;
+            text-align: right;
+            transition: width 1s linear;
+        }
+
+        &__label {
+            padding: 5px;
+            color: white;
+            font-weight: bold;
+        }
     }
 }
